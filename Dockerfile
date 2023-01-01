@@ -4,7 +4,7 @@ EXPOSE 8000
 
 WORKDIR /app 
 
-COPY ./code .
+COPY . .
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 
