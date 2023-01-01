@@ -54,5 +54,5 @@ class RelayCreateLink(graphene.relay.ClientIDMutation):
         return RelayCreateLink(link=link)
 
 
-class RelayMutation(graphene.AbstractType):
+class RelayMutation(graphene.ObjectType):
     relay_create_link = RelayCreateLink.Field()
