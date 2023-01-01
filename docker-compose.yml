@@ -1,0 +1,29 @@
+version: '3.5'
+services:
+  django-app:
+    build: .
+    networks:
+      - app-net
+    volumes:
+      - type: volume 
+        source: shared-vol
+        target: /app
+      
+
+
+  server-app:
+    build: ./nginx 
+    networks:
+      - app-net
+    ports:
+    - "8080:80"
+    depends_on:
+      - django-app
+
+networks:
+  app-net:
+
+volumes:
+  shared-vol:
+
+    
